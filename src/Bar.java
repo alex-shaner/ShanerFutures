@@ -1,16 +1,16 @@
 public class Bar{
 	//I actually saw that there was a java "Date" class and was going to use it, but it's deprecated
-	public String Date;
-	public String Time;
-	public float Open;
-	public float High;
-	public float Low;
-	public float Close;
-	public int Up;
-	public int Down;
+	public Object Date;
+	public Object Time;
+	public Object Open;
+	public Object High;
+	public Object Low;
+	public Object Close;
+	public Object Up;
+	public Object Down;
 	
 	//constructor
-	public Bar(String Date, String Time, float Open, float High, float Low, float Close, int Up, int Down) {
+	public Bar(Object Date, Object Time, Object Open, Object High, Object Low, Object Close, Object Up, Object Down) {
 		this.Date = Date;
 		this.Time = Time;
 		this.Open = Open;
@@ -23,28 +23,29 @@ public class Bar{
 	
 	//get methods
 	public String getDate() {
-		return Date;
+		return Date.toString();
 	}
 	public String getTime() {
-		return Time;
+		return Time.toString();
 	}
 	public float getOpen(){
-		return Open;
+		//this feels dirty
+		return Float.parseFloat(Open.toString());
 	}
 	public float getHigh() {
-		return High;
+		return Float.parseFloat(High.toString());
 	}
 	public float getLow(){
-		return Low;
+		return Float.parseFloat(Low.toString());
 	}
 	public float getClose() {
-		return Close;
+		return Float.parseFloat(Close.toString());
 	}
 	public int getUp() {
-		return Up;
+		return Integer.parseInt(Up.toString());
 	}
 	public int getDown() {
-		return Down;
+		return Integer.parseInt(Down.toString());
 	}
 }
 

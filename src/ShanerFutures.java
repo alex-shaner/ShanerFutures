@@ -14,6 +14,8 @@ public class ShanerFutures {
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		String st;
 		List<Bar> barList = new ArrayList<Bar>();
+		
+		//the Josh bool allows us to skip the first line of the txt file by iterating past it
 		Boolean Josh = false;
 		
 		while ((st = br.readLine()) != null) { 
@@ -49,20 +51,10 @@ public class ShanerFutures {
 			
 			
 		}
-		//taking a break, last thing to do is to successfully initialize a new bar from the object list barvars
 		
-		
-		String Date = new String();
-		String Time = new String();
-		float Open = 434;
-		float High;
-		float Low;
-		float Close;
-		int Up;
-		int Down;
 		
 		//Bar newBar = new Bar(Date, Time, Open, High, Low, Close, Up, Down);
-		Bar newBar = new Bar("de", "dsa", 32.2f, 33.4f, 443.3f, 4324.666f, 55, 67);
+		Bar newBar = new Bar(barVars.get(0), barVars.get(1), barVars.get(2), barVars.get(3), barVars.get(4), barVars.get(5), barVars.get(6), barVars.get(7));
 		System.out.println(newBar.getDown());
 		return newBar;
 	}
